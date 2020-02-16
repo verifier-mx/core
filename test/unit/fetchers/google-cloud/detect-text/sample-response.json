@@ -1,0 +1,32 @@
+{
+  "status": 200,
+  "data": {"responses":[{"textAnnotations":[{"locale":"en","description":"9WW4S\n","boundingPoly":{"vertices":[{"x":5,"y":21},{"x":140,"y":21},{"x":140,"y":59},{"x":5,"y":59}]}},{"description":"9WW4S","boundingPoly":{"vertices":[{"x":5,"y":21},{"x":140,"y":22},{"x":140,"y":59},{"x":5,"y":58}]}}],"fullTextAnnotation":{"pages":[{"property":{"detectedLanguages":[{"languageCode":"en","confidence":1}]},"width":170,"height":75,"blocks":[{"property":{"detectedLanguages":[{"languageCode":"en","confidence":1}]},"boundingBox":{"vertices":[{"x":5,"y":21},{"x":140,"y":22},{"x":140,"y":59},{"x":5,"y":58}]},"paragraphs":[{"property":{"detectedLanguages":[{"languageCode":"en","confidence":1}]},"boundingBox":{"vertices":[{"x":5,"y":21},{"x":140,"y":22},{"x":140,"y":59},{"x":5,"y":58}]},"words":[{"property":{"detectedLanguages":[{"languageCode":"en"}]},"boundingBox":{"vertices":[{"x":5,"y":21},{"x":140,"y":22},{"x":140,"y":59},{"x":5,"y":58}]},"symbols":[{"property":{"detectedLanguages":[{"languageCode":"en"}]},"boundingBox":{"vertices":[{"x":5,"y":21},{"x":51,"y":21},{"x":51,"y":58},{"x":5,"y":58}]},"text":"9"},{"property":{"detectedLanguages":[{"languageCode":"en"}]},"boundingBox":{"vertices":[{"x":52,"y":21},{"x":71,"y":21},{"x":71,"y":58},{"x":52,"y":58}]},"text":"W"},{"property":{"detectedLanguages":[{"languageCode":"en"}]},"boundingBox":{"vertices":[{"x":72,"y":21},{"x":99,"y":21},{"x":99,"y":58},{"x":72,"y":58}]},"text":"W"},{"property":{"detectedLanguages":[{"languageCode":"en"}]},"boundingBox":{"vertices":[{"x":100,"y":22},{"x":119,"y":22},{"x":119,"y":59},{"x":100,"y":59}]},"text":"4"},{"property":{"detectedLanguages":[{"languageCode":"en"}],"detectedBreak":{"type":"EOL_SURE_SPACE"}},"boundingBox":{"vertices":[{"x":120,"y":22},{"x":140,"y":22},{"x":140,"y":59},{"x":120,"y":59}]},"text":"S"}]}]}],"blockType":"TEXT"}]}],"text":"9WW4S\n"}}]},
+  "headers": [
+    "Content-Type",
+    "application/json; charset=UTF-8",
+    "Vary",
+    "X-Origin",
+    "Vary",
+    "Referer",
+    "Date",
+    "Wed, 12 Feb 2020 04:41:06 GMT",
+    "Server",
+    "ESF",
+    "Cache-Control",
+    "private",
+    "X-XSS-Protection",
+    "0",
+    "X-Frame-Options",
+    "SAMEORIGIN",
+    "X-Content-Type-Options",
+    "nosniff",
+    "Alt-Svc",
+    "quic=\":443\"; ma=2592000; v=\"46,43\",h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000",
+    "Accept-Ranges",
+    "none",
+    "Vary",
+    "Origin,Accept-Encoding",
+    "Connection",
+    "close"
+  ]
+}
