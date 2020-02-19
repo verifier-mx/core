@@ -1,4 +1,6 @@
-# Clear core
+# Verifier Core
+
+API for [Verifier](https://verifier.mx).
 
 ## Environment variables
 

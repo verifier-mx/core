@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+				<meta http-equiv="x-ua-compatible" content="IE=edge" />
+				<meta content="text/html; charset=UTF-8" http-equiv="content-type" /><link type="text/css" rel="stylesheet" href="/PTSC/ValidaRFC/javax.faces.resource/theme.css.jsf?ln=primefaces-satgobmx" /><link type="text/css" rel="stylesheet" href="/PTSC/ValidaRFC/javax.faces.resource/primefaces.css.jsf?ln=primefaces" /><script type="text/javascript" src="/PTSC/ValidaRFC/javax.faces.resource/jquery/jquery.js.jsf?ln=primefaces"></script><script type="text/javascript" src="/PTSC/ValidaRFC/javax.faces.resource/primefaces.js.jsf?ln=primefaces"></script><script type="text/javascript" src="/PTSC/ValidaRFC/javax.faces.resource/jquery/jquery-plugins.js.jsf?ln=primefaces"></script>
+        <title>.:: Validador de RFC´s ::.</title>
+        <link rel="shortcut icon" type="image/x-icon" href="/PTSC/ValidaRFC/images/favicon.ico" />
+        <script charset="utf-8" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="/PTSC/ValidaRFC/css/auxiliarSegob.css" media="screen" />
+        <script src="/PTSC/ValidaRFC/js/tabEncuesta.js" charset="utf-8" type="text/javascript"></script></head><body style="padding: 57px 0 0 0 !important; padding-top: -5px !important;">
+        <div class="hgobmx"></div>
+        <div id="container" class="contenedor">
+<form id="formMain" name="formMain" method="post" action="/PTSC/ValidaRFC/index.jsf" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="formMain" value="formMain" />
+
+                <div class="breadcrumbs"><a id="formMain:send" href="#" class="ui-commandlink ui-widget imgLinkHomeNoEstilos" onclick="PrimeFaces.addSubmitParam('formMain',{'formMain:send':'formMain:send'}).submit('formMain');"><img id="formMain:j_idt12" src="/PTSC/ValidaRFC/images/home.png" alt="" class="imgLinkHomeNoEstilos" width="16" height="16" /></a>
+
+                    <span class="spanHome"> </span><img id="formMain:homeflecha1" src="./images/li.png" alt="" width="8" height="13" />                     
+                    <span class="span8px" style="margin-left: -1px;"></span>
+                    <!-- Paso 1 activo -->     
+
+                    <!-- probando link --><a id="formMain:ajax" href="#" class="ui-commandlink ui-widget labelActivo " onclick="PrimeFaces.addSubmitParam('formMain',{'formMain:ajax':'formMain:ajax'}).submit('formMain');">Inicio</a>
+                    <!-- Paso 1 Inactivo -->
+                    <span class="span"></span><img id="formMain:j_idt18" src="./images/li.png" alt="" width="8" height="13" />                     
+                    <span class="span8px"></span>
+
+                    <!-- Paso 2 activo -->  
+
+                    <!-- probando link --><a id="formMain:ajax3" href="#" class="ui-commandlink ui-widget labelActivo seccionActiva" onclick="PrimeFaces.ab({source:'formMain:ajax3',update:'formMain:pnlPaso1 formMain:panelVal formMain:pnlResulRFC'});return false;">Validador de RFC´s</a>
+
+                    <!-- Paso 2 Inactivo -->
+                    <span class="span"></span><img id="formMain:imgStep3" src="./images/li.png" alt="" width="8" height="13" />    
+
+                    <!-- Paso 3 activo --><span id="formMain:j_idt24" class="panelGrid captchaPF  sinBorde gmxNobordePanel">
+                        <span class="span8px" style="width: 8px"></span><label id="formMain:lblStep3" class="ui-outputlabel labelActivo seccionActiva">Resultado RFC</label>                     
+
+                        <span class="span "></span></span>                     
+                    <span class="span8px"></span>
+                    <!-- Paso 4 activo -->
+                </div><a id="formMain:version" name="formMain:version" href="#" style="color: #FFFFFF">  </a><div id="formMain:toolTipFade" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">1.0-SNAPSHOT, 02/08/2018 18:09:21</div><script id="formMain:toolTipFade_s" type="text/javascript">$(function(){PrimeFaces.cw('Tooltip','widget_formMain_toolTipFade',{id:'formMain:toolTipFade',showEffect:'fade',hideEffect:'fade',target:'formMain:version'});});</script>
+                <div class="spacioLogos"><img id="formMain:j_idt31" src="./images/SHCP_hc.svg" alt="" class="logoizquierda" width="120" height="55" /><img id="formMain:j_idt32" src="./images/logoH_col.svg" alt="" class="img" width="120" height="55" />
+                </div><div id="formMain:pnlResulRFC" class="ui-panel ui-widget ui-widget-content ui-corner-all gmxNobordePanel panelGrid panelGridResulConsulta topBtnTerminarConsulta" style="margin-left:-5px !important; margin-bottom:43px"><div id="formMain:pnlResulRFC_content" class="ui-panel-content ui-widget-content">
+
+                    <!-- TITULO--><label id="formMain:j_idt84" class="ui-outputlabel titulo54px">Validación de la clave en el </label><label id="formMain:j_idt85" class="ui-outputlabel titulo54px alineaTitulo54px">RFC</label>     
+                    <div style="margin: 5px 0px !important; padding-top: 16px !important;margin-left: 2px;"><div id="formMain:messageConsultaRFCExito" class="ui-messages ui-widget" aria-live="polite"><div class="ui-messages-info ui-corner-all"><span class="ui-messages-info-icon"></span><ul><li><span class="ui-messages-info-summary">RFC válido, y susceptible de recibir facturas</span></li></ul></div></div>
+                    </div>
+                    <div class="btnTerminaCon ">
+															  
+							<!--separacion de botones--><button id="formMain:terminar" name="formMain:terminar" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only gmxPositivoDos" style="margin: 13px 0px !important;" type="submit"><span class="ui-button-text ui-c">Terminar</span></button><script id="formMain:terminar_s" type="text/javascript">PrimeFaces.cw('CommandButton','widget_formMain_terminar',{id:'formMain:terminar'});</script>
+                    </div></div></div><script id="formMain:pnlResulRFC_s" type="text/javascript">PrimeFaces.cw('Panel','widget_formMain_pnlResulRFC',{id:'formMain:pnlResulRFC'});</script><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="-7104474074236954518:8862964078035271375" autocomplete="off" />
+</form>
+        </div>
+        
+        <div class="fgobmx"></div><ul id="javax_faces_developmentstage_messages" title="Project Stage[Development]: Unhandled Messages"></ul></body>
+</html>

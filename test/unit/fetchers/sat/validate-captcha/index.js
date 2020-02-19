@@ -37,11 +37,7 @@ describe('Fertchers | sat | .validateCaptcha', () => {
     });
 
     it('should return true if the captcha is valid', async () => {
-      const success = await validateCaptcha({
-        cookies: COOKIES,
-        viewState: VIEW_STATE,
-        captchaText: CAPTCHA_TEXT
-      });
+      const success = await validateCaptcha(COOKIES, VIEW_STATE, CAPTCHA_TEXT);
       expect(success).to.be.equal(true);
     });
   });
@@ -57,11 +53,7 @@ describe('Fertchers | sat | .validateCaptcha', () => {
     });
 
     it('should return false if the captcha is invalid', async () => {
-      const success = await validateCaptcha({
-        cookies: COOKIES,
-        viewState: VIEW_STATE,
-        captchaText: CAPTCHA_TEXT
-      });
+      const success = await validateCaptcha(COOKIES, VIEW_STATE, CAPTCHA_TEXT);
       expect(success).to.be.equal(false);
     });
   });
