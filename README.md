@@ -1,6 +1,6 @@
 # Verifier Core
 
-API for [Verifier](https://verifier.mx).
+Business Logic for [Verifier](https://verifier.mx) project.
 
 ## Environment variables
 

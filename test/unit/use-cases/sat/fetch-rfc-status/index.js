@@ -7,9 +7,9 @@ const getSessionData = sinon.stub();
 const validateCaptcha = sinon.stub();
 const verifyRfc = sinon.stub();
 
-const validateRfc = proxyquire(`${ROOT_PATH}/lib/use-cases/sat/validate-rfc`, {
-  '../../../fetchers/google-cloud': { detectText },
-  '../../../fetchers/sat': {
+const fetchRfcStatus = proxyquire(`${ROOT_PATH}/lib/use-cases/sat/fetch-rfc-status`, {
+  '../../fetchers/google-cloud': { detectText },
+  '../../fetchers/sat': {
     getCaptcha,
     getSessionData,
     validateCaptcha,
@@ -24,7 +24,7 @@ const CAPTCHA_CONTENT = 'CAPTCHA_CONTENT';
 const CAPTCHA_TEXT = 'CAPTCHA_TEXT';
 const RESPONSE = 'RESPONSE';
 
-describe('Use cases | sat | .validateRfc', () => {
+describe('Use cases | sat | .fetchRfcStatus', () => {
   beforeEach(() => {
     detectText.resetHistory();
     getCaptcha.resetHistory();
@@ -45,7 +45,7 @@ describe('Use cases | sat | .validateRfc', () => {
       before(() => validateCaptcha.resolves(true));
 
       it('should call each method with expected parameters', async () => {
-        const response = await validateRfc(RFC);
+        const response = await fetchRfcStatus(RFC);
         expect(response).to.be.equal(RESPONSE);
 
         expect(getSessionData.callCount).to.be.equal(1);
@@ -73,7 +73,7 @@ describe('Use cases | sat | .validateRfc', () => {
       });
 
       it('should call each method with expected parameters', async () => {
-        const response = await validateRfc(RFC);
+        const response = await fetchRfcStatus(RFC);
         expect(response).to.be.equal(RESPONSE);
 
         expect(getSessionData.callCount).to.be.equal(1);
@@ -92,7 +92,7 @@ describe('Use cases | sat | .validateRfc', () => {
     });
 
     it('should throw error after 5 attempts to solve the captcha', async () => {
-      await expect(validateRfc(RFC)).to.be.rejectedWith(Error);
+      await expect(fetchRfcStatus(RFC)).to.be.rejectedWith(Error);
 
       expect(getSessionData.callCount).to.be.equal(1);
       expect(getCaptcha.callCount).to.be.equal(5);
