@@ -45,7 +45,7 @@ describe('Use cases | sat | .fetchRfcStatus', () => {
         isValid: true,
         isRegistered: true
       };
-      const response = await fetchRfcStatus(RFC);
+      const response = await fetchRfcStatus({rfc: RFC});
       expect(response).to.be.eql(expectedResponse);
     });
   });

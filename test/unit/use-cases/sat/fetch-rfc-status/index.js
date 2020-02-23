@@ -45,7 +45,7 @@ describe('Use cases | sat | .fetchRfcStatus', () => {
       before(() => validateCaptcha.resolves(true));
 
       it('should call each method with expected parameters', async () => {
-        const response = await fetchRfcStatus(RFC);
+        const response = await fetchRfcStatus({rfc: RFC});
         expect(response).to.be.equal(RESPONSE);
 
         expect(getSessionData.callCount).to.be.equal(1);
@@ -73,7 +73,7 @@ describe('Use cases | sat | .fetchRfcStatus', () => {
       });
 
       it('should call each method with expected parameters', async () => {
-        const response = await fetchRfcStatus(RFC);
+        const response = await fetchRfcStatus({rfc: RFC});
         expect(response).to.be.equal(RESPONSE);
 
         expect(getSessionData.callCount).to.be.equal(1);
@@ -92,7 +92,7 @@ describe('Use cases | sat | .fetchRfcStatus', () => {
     });
 
     it('should throw error after 5 attempts to solve the captcha', async () => {
-      await expect(fetchRfcStatus(RFC)).to.be.rejectedWith(Error);
+      await expect(fetchRfcStatus({rfc: RFC})).to.be.rejectedWith(Error);
 
       expect(getSessionData.callCount).to.be.equal(1);
       expect(getCaptcha.callCount).to.be.equal(5);

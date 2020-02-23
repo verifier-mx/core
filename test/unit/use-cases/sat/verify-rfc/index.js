@@ -5,9 +5,9 @@ const {VALID_RFC} = require('./constants.json');
 const upsertRfc = sinon.stub();
 const findByRfc = sinon.stub();
 const fetchRfcStatus = sinon.stub();
+const database = { rfcs: { findByRfc, upsert: upsertRfc } };
 
 const verifyRfc = proxyquire(`${ROOT_PATH}/lib/use-cases/sat/verify-rfc`, {
-  'verifier-database': { rfcs: { findByRfc, upsert: upsertRfc } },
   './fetch-rfc-status': fetchRfcStatus
 });
 
@@ -32,7 +32,7 @@ describe('Use cases | sat | .verifyRfc', () => {
   describe('When RFC is invalid', () => {
     it('should respond with invalid RFC', async () => {
       const rfc = 'INVALID_RFC';
-      const response = await verifyRfc(rfc);
+      const response = await verifyRfc({database, rfc});
       expect(response).to.be.eql({
         isValid: false,
         isRegistered: false,
@@ -45,12 +45,10 @@ describe('Use cases | sat | .verifyRfc', () => {
   });
 
   describe('When RFC is cached already', () => {
-    beforeEach(() => {
-      findByRfc.resolves(RFC_1);
-    });
+    beforeEach(() => findByRfc.resolves(RFC_1));
 
     it('should return data from stored in DB', async () => {
-      const response = await verifyRfc(VALID_RFC);
+      const response = await verifyRfc({database, rfc: VALID_RFC});
       expect(response).to.be.eql(SUCCESSFUL_RESPONSE);
 
       expectFindByValidRfc(findByRfc);
@@ -69,13 +67,13 @@ describe('Use cases | sat | .verifyRfc', () => {
     });
 
     it('should ask status to SAT and upsert in DB', async () => {
-      const response = await verifyRfc(VALID_RFC);
+      const response = await verifyRfc({database, rfc: VALID_RFC});
       expect(response).to.be.eql(SUCCESSFUL_RESPONSE);
 
       expectFindByValidRfc(findByRfc);
 
       expect(fetchRfcStatus.callCount).to.be.equal(1);
-      expect(fetchRfcStatus.firstCall.args).to.be.eql([VALID_RFC]);
+      expect(fetchRfcStatus.firstCall.args).to.be.eql([{rfc: VALID_RFC}]);
 
       expect(upsertRfc.callCount).to.be.equal(1);
       expect(upsertRfc.firstCall.args).to.be.eql([{

@@ -47,7 +47,7 @@ describe('Use cases | sat | .verifyRfc', () => {
     });
 
     it('should return RFC stored in DB', async () => {
-      const response = await verifyRfc(VALID_RFC);
+      const response = await verifyRfc({database, rfc: VALID_RFC});
       expect(response).to.be.eql(SUCCESSFUL_RESPONSE);
     });
   });
@@ -63,7 +63,7 @@ describe('Use cases | sat | .verifyRfc', () => {
     });
 
     it('should ask status to SAT and upsert result in DB', async () => {
-      const response = await verifyRfc(VALID_RFC);
+      const response = await verifyRfc({database, rfc: VALID_RFC});
       expect(response).to.be.eql({
         ...SUCCESSFUL_RESPONSE,
         satMessage: 'RFC válido, y susceptible de recibir facturas'
