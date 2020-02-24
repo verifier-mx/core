@@ -23,7 +23,7 @@
     "dotenv": "^8.2.0",
     "lodash": "^4.17.15",
     "rfc-facil": "^1.0.0",
-    "validate-rfc": "^1.0.1"
+    "validate-rfc": "^1.0.2"
   },
   "devDependencies": {
     "chai": "^4.2.0",

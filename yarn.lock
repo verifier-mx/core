@@ -1197,10 +1197,10 @@ util-deprecate@^1.0.1:
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
 
-validate-rfc@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/validate-rfc/-/validate-rfc-1.0.1.tgz#a975b3549b3dedbc713490e9650dcba1b569af96"
-  integrity sha512-QCiCSGExUs7kY8mUaLVcT4nlzd8cLo6gBTFYqdKbdvJR9eajz6ve8943zoXCEOskICU4Ne0e7xBGbYATOAmLRA==
+validate-rfc@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/validate-rfc/-/validate-rfc-1.0.2.tgz#5affa7412f5fd4b1bf911e19d7ee29515a647c12"
+  integrity sha512-oH+hTmxm7fOq7Zfh3Rh6io9atXG7lFamygCQBo6Xi5LOa7UQgvyjXl+Zt3ddUmSWHdzoEcr3wrZdYwjdkU8lKA==
 
 "verifier-database@git+ssh://git@github.com/manuelmhtr/verifier-database.git":
   version "0.0.0"
