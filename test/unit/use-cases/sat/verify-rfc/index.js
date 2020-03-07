@@ -1,11 +1,15 @@
 const sinon = require('sinon');
 const proxyquire = require('proxyquire');
-const {VALID_RFC} = require('./constants.json');
+const {VALID_RFC, BLACKLIST_69B_RESPONSE} = require('./constants.json'); 
 
 const upsertRfc = sinon.stub();
 const findByRfc = sinon.stub();
 const fetchRfcStatus = sinon.stub();
-const database = { rfcs: { findByRfc, upsert: upsertRfc } };
+const bl69bFindByRfc = sinon.stub().resolves(BLACKLIST_69B_RESPONSE);
+const database = {
+  rfcs: { findByRfc, upsert: upsertRfc },
+  blacklist69b: { findByRfc: bl69bFindByRfc }
+};
 
 const verifyRfc = proxyquire(`${ROOT_PATH}/lib/use-cases/sat/verify-rfc`, {
   './fetch-rfc-status': fetchRfcStatus
@@ -16,7 +20,8 @@ const SUCCESSFUL_RESPONSE = {
   isRegistered: true,
   rfc: VALID_RFC,
   type: 'person',
-  satMessage: 'ok'
+  satMessage: 'ok',
+  blacklist69b: BLACKLIST_69B_RESPONSE
 };
 
 describe('Use cases | sat | .verifyRfc', () => {
@@ -27,6 +32,7 @@ describe('Use cases | sat | .verifyRfc', () => {
     upsertRfc.resetHistory();
     findByRfc.resetHistory();
     fetchRfcStatus.resetHistory();
+    bl69bFindByRfc.resetHistory();
   });
 
   describe('When RFC is invalid', () => {
@@ -39,7 +45,8 @@ describe('Use cases | sat | .verifyRfc', () => {
         rfc: null,
         type: null,
         satMessage: null,
-        validationErrors: ['INVALID_FORMAT']
+        validationErrors: ['INVALID_FORMAT'],
+        blacklist69b: null
       });
     });
   });
@@ -54,6 +61,8 @@ describe('Use cases | sat | .verifyRfc', () => {
       expectFindByValidRfc(findByRfc);
       expect(fetchRfcStatus.callCount).to.be.equal(0);
       expect(upsertRfc.callCount).to.be.equal(0);
+
+      expectBlacklist69bCall(VALID_RFC);
     });
   });
 
@@ -75,6 +84,8 @@ describe('Use cases | sat | .verifyRfc', () => {
       expect(fetchRfcStatus.callCount).to.be.equal(1);
       expect(fetchRfcStatus.firstCall.args).to.be.eql([{rfc: VALID_RFC}]);
 
+      expectBlacklist69bCall(VALID_RFC);
+
       expect(upsertRfc.callCount).to.be.equal(1);
       expect(upsertRfc.firstCall.args).to.be.eql([{
         isValid: RFC_1.isValid,
@@ -95,4 +106,9 @@ function expectFindByValidRfc(stub) {
   const expectedUpdatedAfterAt = Date.now() - 30 * ONE_DAY_IN_MS;
   expect(actualRfc).to.be.equal(VALID_RFC);
   expect(actualOptions.updatedAfter.getTime()).to.be.closeTo(expectedUpdatedAfterAt, 1000);
+}
+
+function expectBlacklist69bCall(rfc) {
+  expect(bl69bFindByRfc.callCount).to.be.equal(1);
+  expect(bl69bFindByRfc.firstCall.args).to.be.eql([rfc]);
 }

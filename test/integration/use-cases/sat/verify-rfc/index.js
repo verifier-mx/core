@@ -10,7 +10,8 @@ const SUCCESSFUL_RESPONSE = {
   isRegistered: true,
   rfc: VALID_RFC,
   type: 'person',
-  satMessage: 'ok'
+  satMessage: 'ok',
+  blacklist69b: null
 };
 const COOKIES = serializeCookies({
   'JSESSIONID': 'Xe5QQ7DnE4aRkmpnrEeGdXgH9aI6xrWKBsoV2eKeze2bpeO2JR_u!1176736271!1895662390',
