@@ -73,7 +73,7 @@ const EXPECTED_RESPONSE = [
 describe('Fertchers | sat | .getBlacklist69b', () => {
   beforeEach(mockResponses.sat.getBlacklist69b.successfulResponse);
 
-  it('should return the captcha content', async () => {
+  it('should return the parsed 69B blacklist', async () => {
     const blacklist = await getBlacklist69b();
     expect(blacklist).to.be.eql(EXPECTED_RESPONSE);
   });
