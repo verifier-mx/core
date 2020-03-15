@@ -2031,10 +2031,10 @@ ret@~0.1.10:
   resolved "https://registry.yarnpkg.com/ret/-/ret-0.1.15.tgz#b8a4825d5bdb1fc3f6f53c2bc33f81388681c7bc"
   integrity sha512-TTlYpa+OL+vMMNG24xSlQGEJ3B/RzEfUlLct7b5G/ytav+wPrplCpVMFuwzXbkecJrb6IYo1iFb0S9v37754mg==
 
-rfc-facil@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/rfc-facil/-/rfc-facil-1.0.0.tgz#9909bda6df760553b312e620be899d49d1c44ab2"
-  integrity sha512-mR9QtIk35F9HxQD/zzGnwZi/h74LW7KaA1p7+IEQcNLuE0TX7YdGs0GiHYfBAoxWo3yFI2GkHC5GfVSy8gyGqQ==
+rfc-facil@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/rfc-facil/-/rfc-facil-1.1.0.tgz#9de3415570b26b0a497e126ea67906273fca96d4"
+  integrity sha512-ImGh2qCMEn3kbuvv+YkH2oqwRDbGVi6t4rrycHUoIxIuFGxqap0GhGFE6oNrbtLzMOcSgcLPfPn7iq14XaBqQQ==
 
 safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.2"

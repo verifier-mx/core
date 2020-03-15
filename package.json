@@ -34,7 +34,7 @@
     "lodash": "^4.17.15",
     "moment-timezone": "^0.5.28",
     "p-map": "^4.0.0",
-    "rfc-facil": "^1.0.0",
+    "rfc-facil": "^1.1.0",
     "validate-rfc": "^1.0.3"
   },
   "devDependencies": {
