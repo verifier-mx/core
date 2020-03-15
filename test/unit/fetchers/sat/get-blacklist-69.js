@@ -8,18 +8,18 @@ const EXPECTED_RESPONSE = {
       type: 'CANCELADOS',
       rfc: '&ME060209E41',
       name: 'Y & Y MEXICO SA DE CV',
-      firstPublicationType: new Date('2015-11-01T06:00:00.000Z'),
-      publicationType: null,
+      firstPublicationDate: new Date('2015-11-01T06:00:00.000Z'),
+      publicationDate: null,
       amount: null,
-      state: 'MEXICO',
+      state: 'ESTADO DE MEXICO',
       reason: null
     },
     {
       type: 'CANCELADOS',
       rfc: '&ML040319NR4',
       name: 'E & M LOGISTIC SERVICE  SA DE CV',
-      firstPublicationType: new Date('2018-02-16T06:00:00.000Z'),
-      publicationType: new Date('2018-02-16T06:00:00.000Z'),
+      firstPublicationDate: new Date('2018-02-16T06:00:00.000Z'),
+      publicationDate: new Date('2018-02-16T06:00:00.000Z'),
       amount: 308000,
       state: 'CHIAPAS',
       reason: null
@@ -28,8 +28,8 @@ const EXPECTED_RESPONSE = {
       type: 'CANCELADOS',
       rfc: '&RM040614KE0',
       name: 'A & R DE MEXICO .925 SA DE CV',
-      firstPublicationType: new Date('2014-12-01T06:00:00.000Z'),
-      publicationType: null,
+      firstPublicationDate: new Date('2014-12-01T06:00:00.000Z'),
+      publicationDate: null,
       amount: null,
       state: 'GUERRERO',
       reason: null
@@ -40,31 +40,31 @@ const EXPECTED_RESPONSE = {
       type: 'CONDONADOS_2007_2015',
       rfc: 'AAA390128530',
       name: 'ASOCIACION DE AGENTES ADUANALES DE NUEVO LAREDO AC',
-      firstPublicationType: new Date('2007-01-01T06:00:00.000Z'),
-      publicationType: null,
+      firstPublicationDate: new Date('2007-01-01T06:00:00.000Z'),
+      publicationDate: null,
       amount: 1169183300,
       state: 'TAMAULIPAS',
-      reason: 'Por cumplir con los requisitos previstos en el art¡culo 7mo transitorio de la Ley de Ingresos de la Federaci¢n para el ejercicio Fiscal de 2007'
+      reason: 'Por cumplir con los requisitos previstos en el artículo 7mo transitorio de la Ley de Ingresos de la Federación para el ejercicio Fiscal de 2007'
     },
     {
       type: 'CONDONADOS_2007_2015',
       rfc: 'AAA870910JNA',
       name: 'ALARCON AGUILAR Y AUDITORES SC',
-      firstPublicationType: new Date('2008-01-01T06:00:00.000Z'),
-      publicationType: null,
+      firstPublicationDate: new Date('2008-01-01T06:00:00.000Z'),
+      publicationDate: null,
       amount: 198347700,
       state: 'BAJA CALIFORNIA SUR',
-      reason: 'Por cumplir con los requisitos previstos en el art¡culo 74 del C¢digo Fiscal de la Federaci¢n y las reglas de la Resoluci¢n Miscel nea Fiscal'
+      reason: 'Por cumplir con los requisitos previstos en el artículo 74 del Código Fiscal de la Federación y las reglas de la Resolución Miscelánea Fiscal'
     },
     {
       type: 'CONDONADOS_2007_2015',
       rfc: 'AAA880801SR2',
       name: 'ASESORES Y ACTUARIOS AGENTES DE SEGUROS SA DE CV',
-      firstPublicationType: new Date('2008-01-01T06:00:00.000Z'),
-      publicationType: null,
+      firstPublicationDate: new Date('2008-01-01T06:00:00.000Z'),
+      publicationDate: null,
       amount: 457349900,
       state: 'CIUDAD DE MEXICO',
-      reason: 'Por cumplir con los requisitos previstos en el art¡culo 74 del C¢digo Fiscal de la Federaci¢n y las reglas de la Resoluci¢n Miscel nea Fiscal'
+      reason: 'Por cumplir con los requisitos previstos en el artículo 74 del Código Fiscal de la Federación y las reglas de la Resolución Miscelánea Fiscal'
     }
   ]
 };

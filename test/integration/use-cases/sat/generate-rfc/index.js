@@ -9,6 +9,7 @@ const RESPONSE_TEMPLATE = {
   rfc: null,
   type: null,
   satMessage: 'ok',
+  blacklist69: [],
   blacklist69b: null
 };
 

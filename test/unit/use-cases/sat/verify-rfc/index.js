@@ -1,13 +1,15 @@
 const sinon = require('sinon');
 const proxyquire = require('proxyquire');
-const {VALID_RFC, BLACKLIST_69B_RESPONSE} = require('./constants.json'); 
+const {VALID_RFC, BLACKLIST_69_RESPONSE, BLACKLIST_69B_RESPONSE} = require('./constants.json');
 
 const upsertRfc = sinon.stub();
 const findByRfc = sinon.stub();
 const fetchRfcStatus = sinon.stub();
+const bl69FindByRfc = sinon.stub().resolves(BLACKLIST_69_RESPONSE);
 const bl69bFindByRfc = sinon.stub().resolves(BLACKLIST_69B_RESPONSE);
 const database = {
   rfcs: { findByRfc, upsert: upsertRfc },
+  blacklist69: { findByRfc: bl69FindByRfc },
   blacklist69b: { findByRfc: bl69bFindByRfc }
 };
 
@@ -21,6 +23,7 @@ const SUCCESSFUL_RESPONSE = {
   rfc: VALID_RFC,
   type: 'person',
   satMessage: 'ok',
+  blacklist69: BLACKLIST_69_RESPONSE,
   blacklist69b: BLACKLIST_69B_RESPONSE
 };
 
@@ -32,6 +35,7 @@ describe('Use cases | sat | .verifyRfc', () => {
     upsertRfc.resetHistory();
     findByRfc.resetHistory();
     fetchRfcStatus.resetHistory();
+    bl69FindByRfc.resetHistory();
     bl69bFindByRfc.resetHistory();
   });
 
@@ -46,6 +50,7 @@ describe('Use cases | sat | .verifyRfc', () => {
         type: null,
         satMessage: null,
         validationErrors: ['INVALID_FORMAT'],
+        blacklist69: [],
         blacklist69b: null
       });
     });
@@ -62,6 +67,7 @@ describe('Use cases | sat | .verifyRfc', () => {
       expect(fetchRfcStatus.callCount).to.be.equal(0);
       expect(upsertRfc.callCount).to.be.equal(0);
 
+      expectBlacklist69Call(VALID_RFC);
       expectBlacklist69bCall(VALID_RFC);
     });
   });
@@ -84,6 +90,7 @@ describe('Use cases | sat | .verifyRfc', () => {
       expect(fetchRfcStatus.callCount).to.be.equal(1);
       expect(fetchRfcStatus.firstCall.args).to.be.eql([{rfc: VALID_RFC}]);
 
+      expectBlacklist69Call(VALID_RFC);
       expectBlacklist69bCall(VALID_RFC);
 
       expect(upsertRfc.callCount).to.be.equal(1);
@@ -106,6 +113,11 @@ function expectFindByValidRfc(stub) {
   const expectedUpdatedAfterAt = Date.now() - 30 * ONE_DAY_IN_MS;
   expect(actualRfc).to.be.equal(VALID_RFC);
   expect(actualOptions.updatedAfter.getTime()).to.be.closeTo(expectedUpdatedAfterAt, 1000);
+}
+
+function expectBlacklist69Call(rfc) {
+  expect(bl69FindByRfc.callCount).to.be.equal(1);
+  expect(bl69FindByRfc.firstCall.args).to.be.eql([rfc]);
 }
 
 function expectBlacklist69bCall(rfc) {

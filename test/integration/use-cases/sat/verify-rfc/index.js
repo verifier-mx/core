@@ -11,6 +11,7 @@ const SUCCESSFUL_RESPONSE = {
   rfc: VALID_RFC,
   type: 'person',
   satMessage: 'ok',
+  blacklist69: [],
   blacklist69b: null
 };
 const COOKIES = serializeCookies({
