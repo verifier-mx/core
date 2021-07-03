@@ -1314,17 +1314,17 @@ validate-rfc@^2.0.0:
   resolved "https://registry.yarnpkg.com/validate-rfc/-/validate-rfc-2.0.0.tgz#cc97ab7a5e3825f4d575614b89e146cb47e0fcd7"
   integrity sha512-Htb4Oinob8xp+s+TVxH+qWk5hzXN4ZJ1grIFbTFIvMutoLMCfVEldP6INULawX1G4RQUGqjWzYUFNMTRugmmvQ==
 
-"verifier-database@git+ssh://git@github.com/manuelmhtr/verifier-database.git":
+verifier-database@verifier-mx/database.git:
   version "1.0.0"
-  resolved "git+ssh://git@github.com/manuelmhtr/verifier-database.git#5c1f55bf3551707b5588cd0b14adf9d29de92e7e"
+  resolved "git+ssh://git@github.com/verifier-mx/database.git#cbf34b1ecfebaa980ca81f9f351589e10b891904"
   dependencies:
     dotenv "^10.0.0"
     knex "^0.95.6"
     pg "^8.6.0"
 
-"verifier-test-utils@git+ssh://git@github.com/manuelmhtr/verifier-test-utils.git":
+verifier-test-utils@verifier-mx/test-utils.git:
   version "1.1.0"
-  resolved "git+ssh://git@github.com/manuelmhtr/verifier-test-utils.git#8edbd91e56394fa90a7ede326fb22d11c0d03465"
+  resolved "git+ssh://git@github.com/verifier-mx/test-utils.git#8edbd91e56394fa90a7ede326fb22d11c0d03465"
   dependencies:
     fixtures-generator "^1.0.3"
     lodash "^4.17.15"
